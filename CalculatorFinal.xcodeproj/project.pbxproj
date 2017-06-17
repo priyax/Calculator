@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		014B9A8D1EF5787200DD1FE2 /* customUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014B9A8C1EF5787200DD1FE2 /* customUIButton.swift */; };
 		801A9B9A1D14765D003A297A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801A9B991D14765D003A297A /* AppDelegate.swift */; };
 		801A9B9C1D14765D003A297A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801A9B9B1D14765D003A297A /* ViewController.swift */; };
 		801A9B9F1D14765D003A297A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 801A9B9D1D14765D003A297A /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		014B9A8C1EF5787200DD1FE2 /* customUIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = customUIButton.swift; path = CalculatorFinal/customUIButton.swift; sourceTree = "<group>"; };
 		801A9B961D14765D003A297A /* CalculatorFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalculatorFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		801A9B991D14765D003A297A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		801A9B9B1D14765D003A297A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		801A9B8D1D14765D003A297A = {
 			isa = PBXGroup;
 			children = (
+				014B9A8C1EF5787200DD1FE2 /* customUIButton.swift */,
 				801A9B981D14765D003A297A /* CalculatorFinal */,
 				801A9BB01D14765D003A297A /* CalculatorFinalTests */,
 				801A9BBB1D14765D003A297A /* CalculatorFinalUITests */,
@@ -191,7 +194,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = Priya;
 				TargetAttributes = {
 					801A9B951D14765D003A297A = {
@@ -263,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				014B9A8D1EF5787200DD1FE2 /* customUIButton.swift in Sources */,
 				801A9BA21D14765D003A297A /* CalculatorFinal.xcdatamodeld in Sources */,
 				801A9B9C1D14765D003A297A /* ViewController.swift in Sources */,
 				801A9B9A1D14765D003A297A /* AppDelegate.swift in Sources */,
@@ -334,8 +338,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -379,8 +385,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -399,6 +407,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

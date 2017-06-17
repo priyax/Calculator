@@ -3,7 +3,7 @@
 //  CalculatorFinal
 //
 //  Created by Priya Xavier on 6/17/16.
-// /Users/rakeshjohn/Desktop/Swift/CalculatorFinal/CalculatorFinal/ViewController.swift Copyright © 2016 Priya. All rights reserved.
+//Copyright © 2016 Priya. All rights reserved.
 //
 
 import UIKit
@@ -18,6 +18,7 @@ class ViewController: UIViewController
      var nextMathFunction :String = ""
     
      var formatter = NumberFormatter()
+  
     var operatorHasBeenSelected :Bool = false
 
 
@@ -53,7 +54,7 @@ class ViewController: UIViewController
         var value = formatter.number(from: Display.text!)!.doubleValue
         value = value / 100
 
-        Display.text = String(value)
+        Display.text = formatter.string(from: NSNumber(value: value))
     }
     
     @IBAction func DecimalPoint() {
@@ -67,17 +68,19 @@ class ViewController: UIViewController
         formatter.usesSignificantDigits = true
         var value = formatter.number(from: Display.text!)!.doubleValue
         value = value * -1
-        Display.text = String(value)
+        Display.text = formatter.string(from: NSNumber(value: value))
     }
     
     @IBAction func math(_ sender: UIButton)
     {
         var answer :Double = 0
         isIntheMiddleOfTypying = false
-        formatter.usesSignificantDigits = true
+      formatter.usesSignificantDigits = true
+      formatter.alwaysShowsDecimalSeparator = false
 
         if operatorHasBeenSelected == false {
-            
+          
+          //Convert text into NSNumber
             let operand = formatter.number(from: Display.text!)!.doubleValue
             OperandStack.append(operand) // Add numbers to be operated on into an array
             operatorHasBeenSelected = true
@@ -114,14 +117,15 @@ class ViewController: UIViewController
                         default : Display.text = " "
             
                         }
-          Display.text = String(answer)
+          Display.text = formatter.string(from: NSNumber(value: answer))
+          
           OperandStack = [answer]  //Store the answer in the array for continuing calculations
           
           print("Operand Stack = \(OperandStack)")
           print("Answer =\(String(answer))")
           
           if sender.currentTitle == "=" {
-            OperandStack = []//Clear the array to start a new calculation
+            OperandStack = [] //Clear the array to start a new calculation
             currentMathFunction = ""
             nextMathFunction = ""
             operatorHasBeenSelected = false
@@ -131,7 +135,7 @@ class ViewController: UIViewController
             nextMathFunction = ""
 
            }
-            print("\(operatorHasBeenSelected)")
+          //print("\(operatorHasBeenSelected)")
        
         }
       }
