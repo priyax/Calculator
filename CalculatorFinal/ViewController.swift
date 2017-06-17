@@ -28,6 +28,7 @@ class ViewController: UIViewController
         let digit = sender.currentTitle!
          if isIntheMiddleOfTypying
         { Display.text = Display.text! + digit
+          print("Display text = \(Display.text!)")
         }
         else {
         Display.text = digit
@@ -59,9 +60,18 @@ class ViewController: UIViewController
     
     @IBAction func DecimalPoint() {
         let value = formatter.number(from: Display.text!)!.doubleValue
-        if value.truncatingRemainder(dividingBy: 1) == 0 {
-        Display.text = Display.text! + "."   //Add decimal point only if its an integer
-        }
+      //check if number is already a fraction
+      
+          if isIntheMiddleOfTypying {
+            if value == floor(value){
+              Display.text = Display.text! + "."   //Add decimal point only if its an integer
+            }
+          } else {
+            Display.text = "0."
+            isIntheMiddleOfTypying = true
+          }
+      
+      
     }
     
     @IBAction func Sign() {
@@ -69,6 +79,7 @@ class ViewController: UIViewController
         var value = formatter.number(from: Display.text!)!.doubleValue
         value = value * -1
         Display.text = formatter.string(from: NSNumber(value: value))
+        isIntheMiddleOfTypying = true
     }
     
     @IBAction func math(_ sender: UIButton)
